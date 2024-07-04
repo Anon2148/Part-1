@@ -1,4 +1,4 @@
-import Statistic from "./Statistic";
+import StatisticLine from "./StatisticLine";
 
 const Statistics = (props) => {
   const goodValue = 1;
@@ -23,12 +23,12 @@ const Statistics = (props) => {
   }
   return (
     <>
-      <Statistic text="good" total={props.good} />
-      <Statistic text="neutral" total={props.neutral} />
-      <Statistic text="bad" total={props.bad} />
-      <Statistic text="all" total={sumAll()} />
-      <Statistic text="average" total={average()} />
-      <Statistic text="positive" total={positive()} />
+      <StatisticLine text="good" total={props.good} />
+      <StatisticLine text="neutral" total={props.neutral} />
+      <StatisticLine text="bad" total={props.bad} />
+      <StatisticLine text="all" total={sumAll()} />
+      <StatisticLine text="average" total={average()} />
+      <StatisticLine text="positive" total={positive()} />
     </>
   );
 };

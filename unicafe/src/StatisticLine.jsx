@@ -1,4 +1,4 @@
-const Statistic = (props) => {
+const StatisticLine = (props) => {
   return (
     <p>
       {props.text} {props.total}
@@ -6,4 +6,4 @@ const Statistic = (props) => {
   );
 };
 
-export default Statistic;
+export default StatisticLine;
