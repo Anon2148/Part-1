@@ -18,6 +18,9 @@ const Statistics = (props) => {
     return (props.good / total) * 100;
   };
 
+  if (props.good === 0 && props.neutral === 0 && props.bad === 0) {
+    return <p>No feedback given</p>;
+  }
   return (
     <>
       <Statistic text="good" total={props.good} />
