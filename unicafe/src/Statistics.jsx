@@ -23,12 +23,28 @@ const Statistics = (props) => {
   }
   return (
     <>
-      <StatisticLine text="good" total={props.good} />
-      <StatisticLine text="neutral" total={props.neutral} />
-      <StatisticLine text="bad" total={props.bad} />
-      <StatisticLine text="all" total={sumAll()} />
-      <StatisticLine text="average" total={average()} />
-      <StatisticLine text="positive" total={positive()} />
+      <table>
+        <tbody>
+          <tr>
+            <StatisticLine text="good" total={props.good} />
+          </tr>
+          <tr>
+            <StatisticLine text="neutral" total={props.neutral} />
+          </tr>
+          <tr>
+            <StatisticLine text="bad" total={props.bad} />
+          </tr>
+          <tr>
+            <StatisticLine text="all" total={sumAll()} />
+          </tr>
+          <tr>
+            <StatisticLine text="average" total={average()} />
+          </tr>
+          <tr>
+            <StatisticLine text="positive" total={positive()} />
+          </tr>
+        </tbody>
+      </table>
     </>
   );
 };

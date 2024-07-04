@@ -1,8 +1,9 @@
 const StatisticLine = (props) => {
   return (
-    <p>
-      {props.text} {props.total}
-    </p>
+    <>
+      <td>{props.text}</td>
+      <td>{props.total}</td>
+    </>
   );
 };
 
