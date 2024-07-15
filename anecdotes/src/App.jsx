@@ -1,5 +1,6 @@
 import { useState } from "react";
 import ChangeAnecdote from "./ChangeAnecdote";
+import VoteAnecdote from "./VoteAnecdote";
 
 const App = () => {
   const anecdotes = [
@@ -12,6 +13,7 @@ const App = () => {
     "Programming without an extremely heavy use of console.log is same as if a doctor would refuse to use x-rays or blood tests when diagnosing patients.",
     "The only way to go fast, is to go well.",
   ];
+  const [votes, setVotes] = useState([0, 0, 0, 0, 0, 0, 0, 0]);
 
   const [selected, setSelected] = useState(0);
 
@@ -19,6 +21,9 @@ const App = () => {
     <div>
       {anecdotes[selected]}
       <br />
+      has {votes[selected]} votes
+      <br />
+      <VoteAnecdote selected={selected} votes={votes} setVotes={setVotes} />
       <ChangeAnecdote setSelected={setSelected} length={anecdotes.length} />
     </div>
   );
