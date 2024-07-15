@@ -1,6 +1,6 @@
 import { useState } from "react";
-import ChangeAnecdote from "./ChangeAnecdote";
-import VoteAnecdote from "./VoteAnecdote";
+import AnecdoteOfTheDay from "./AnecdoteOfTheDay";
+import ShowAnecdote from "./ShowAnecdote";
 
 const App = () => {
   const anecdotes = [
@@ -14,17 +14,26 @@ const App = () => {
     "The only way to go fast, is to go well.",
   ];
   const [votes, setVotes] = useState([0, 0, 0, 0, 0, 0, 0, 0]);
+  const [mostVoted, setMostVoted] = useState(0);
 
   const [selected, setSelected] = useState(0);
 
   return (
     <div>
-      {anecdotes[selected]}
-      <br />
-      has {votes[selected]} votes
-      <br />
-      <VoteAnecdote selected={selected} votes={votes} setVotes={setVotes} />
-      <ChangeAnecdote setSelected={setSelected} length={anecdotes.length} />
+      <AnecdoteOfTheDay
+        anecdotes={anecdotes}
+        selected={selected}
+        setSelected={setSelected}
+        votes={votes}
+        setVotes={setVotes}
+        mostVoted={mostVoted}
+        setMostVoted={setMostVoted}
+      />
+      <ShowAnecdote
+        title="Anecdote with most votes"
+        anecdote={anecdotes[mostVoted]}
+        votes={votes[mostVoted]}
+      />
     </div>
   );
 };
